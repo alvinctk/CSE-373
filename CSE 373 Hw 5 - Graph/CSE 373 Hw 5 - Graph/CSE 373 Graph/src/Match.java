@@ -38,7 +38,7 @@ public class Match {
 		printTestGraphData(GD);
 		
 		searchIsomorphic(VM, VD);
-		
+		System.out.println("nothing");
 	}
 	
 	
@@ -59,27 +59,29 @@ public class Match {
 		}
 	}
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
-		for (int i = 0; i < VM.size; i++){
-			for (int j = 0; j < VD.size; j++){
+		
+		for (int j = 0; j < VD.size && VM.size >= 1; j++){
 				
 				IsomorphicSet hCopy = new IsomorphicSet(h);
-				hCopy.addMapping(VM.getVertice(i), VD.getVertice(j));
-				
+				hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
+				//isMappingOk = isMappingOk(hCopy);
 				if (isMappingOk(hCopy)){
 					//System.out.print("\nok");
-					VertexSet VMCopy = new VertexSet(VM, i);
+					VertexSet VMCopy = new VertexSet(VM, 0);
 					VertexSet VDCopy = new VertexSet(VD, j);
-					if (VMCopy.isEmpty()){
-						//System.out.print("\nprint");
-						hCopy.printIsomorphism();
+					//hCopy.printIsomorphism();
+					if (hCopy.isComplete()){//VMCopy.isEmpty() && ){
+						System.out.print("\nprint");
+						//hCopy.printIsomorphism();
 					}else{
 						//hCopy.printTest();
 						searchIsomorphic(VMCopy, VDCopy, hCopy);
+						hCopy.printIsomorphism();
 					}
 					
 				}
-			}
 		}
+		
 	}
 	
 	private static boolean isMappingOk(IsomorphicSet h){
@@ -91,12 +93,14 @@ public class Match {
 					int xTempVM = h.getMapValue(0, j);
 					int xTempVD = h.getMapValue(1, j);
 					if (adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
+						
 						h.removeMapping();
 						return false; 
 					}
 				}
 			}
 		}
+		
 		return true;
 	}
 

@@ -101,8 +101,9 @@ public class IsomorphicSet {
 	}
 	
 	public boolean isComplete(){
-		return ((curIndexPtr+1) == size && 
-				mapping[0][curIndexPtr] != -5 &&
-				mapping[1][curIndexPtr] != -5)? true : false; 
+		this.printIsomorphism();
+		return ((curIndexPtr) == size && 
+				mapping[0][curIndexPtr-1] != -5 &&
+				mapping[1][curIndexPtr-1] != -5)? true : false; 
 	}
 }

@@ -1,0 +1,26 @@
+public class GraphData {
+	String graphName; 
+	int numNodes; 
+	int numEdges; 
+	int adjMatrix [][];
+	int vertices[];
+
+
+	public GraphData(String graphName, int numNodes, int numEdges){
+		this.graphName = graphName; 
+		this.numNodes = numNodes; 
+		this.numEdges = numEdges; 
+		adjMatrix = new int [numNodes][numNodes];
+		// initalize all values of adj matrix 
+		for(int i =0; i < numNodes; i++){
+			for(int j =0; j < numNodes; j++){
+				adjMatrix[i][j] = 0;
+			}
+		}
+	}
+	
+	void addEdge(int nodeA, int nodeB){
+		adjMatrix[nodeA-1][nodeB-1] = 1;
+		//adjMatrix[nodeB-1][nodeA-1] = 1;
+	}
+}

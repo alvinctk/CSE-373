@@ -1,0 +1,179 @@
+
+import java.io.*;
+
+
+public class Match {
+
+	private static int adjMatrixGM[][];
+	private static int adjMatrixGD[][];
+	
+	public static void main (String [] args){
+		
+		if (args.length < 2){
+			usage();
+		}else {
+			matchSubGraph(args[0], args[1]);
+		}
+
+	
+		
+
+		
+	}
+	
+	private static  void matchSubGraph (String GM_filename, String GD_filename){
+		GraphData GM = getGraphData(GM_filename);
+		GraphData GD = getGraphData(GD_filename);
+		
+		adjMatrixGM = GM.adjMatrix;
+		adjMatrixGD = GD.adjMatrix;
+		
+		VertexSet VM = new VertexSet (GM.numNodes);
+		VertexSet VD = new VertexSet (GD.numNodes);
+		
+		//IsomorphicSet hMap = new IsomorphicSet(GM.numNodes);
+		
+		printTestGraphData(GM);
+		System.out.println();
+		printTestGraphData(GD);
+		
+		searchIsomorphic(VM, VD);
+		
+	}
+	
+	
+	
+	
+	private static void searchIsomorphic(VertexSet VM, VertexSet VD){
+	
+		for (int i = 0; i < VD.size; i++){
+				
+			IsomorphicSet hCopy = new IsomorphicSet(VM.size);
+			hCopy.addMapping(VM.getVertice(0), VD.getVertice(i));
+				
+			VertexSet VMCopy = new VertexSet(VM, 0);
+			VertexSet VDCopy = new VertexSet(VD, i);
+			
+			searchIsomorphic(VMCopy, VDCopy, hCopy);
+			
+		}
+	}
+	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
+		
+		
+		
+		for (int i = 0; i < VM.size; i++){
+			for (int j = 0; j < VD.size; j++){
+				
+				IsomorphicSet hCopy = new IsomorphicSet(h);
+				hCopy.addMapping(VM.getVertice(i), VD.getVertice(j));
+				VertexSet VMCopy = new VertexSet(VM, i);
+				VertexSet VDCopy = new VertexSet(VD, j);
+				//isMappingOk = isMappingOk(hCopy);
+				if (isMappingOk(hCopy)){
+					//System.out.print("\nok");
+
+					if (VMCopy.isEmpty() && hCopy.isComplete()){//VMCopy.isEmpty() && ){
+						//System.out.print("\nprint");
+						hCopy.printIsomorphism();
+					}else{
+						//hCopy.printTest();
+						searchIsomorphic(VMCopy, VDCopy, hCopy);
+					}
+					
+				}else {
+					continue;
+				}
+			}
+		}
+	}
+	
+	private static boolean isMappingOk(IsomorphicSet h){
+		for (int i =0; i < h.curIndexPtr; i++){
+			int xCurVM = h.getMapValue(0, i);
+			int xCurVD = h.getMapValue(1, i);
+			for (int j = 0; j< h.curIndexPtr; j++){
+				if (i != j){
+					int xTempVM = h.getMapValue(0, j);
+					int xTempVD = h.getMapValue(1, j);
+					if (adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
+						h.removeMapping();
+						return false; 
+					}
+				}
+			}
+		}
+		return true;
+	}
+
+	 
+	//####################!!!!!!!!!!!!!!!!!#################
+	//####################!!!!!!!!!!!!!!!!!#################
+	//####################!!!!!!!!!!!!!!!!!#################
+	// you need not edit anything below this line
+	 
+	    private static void usage(){
+	        System.out.println("Usage: java Match <command [query GM file] [query GD file]> ");
+	        System.out.println("Commands:");
+	        System.out.printf("\n\t[query GM file] - text file that contains graph object" );
+	        System.out.printf("\n\t[query GD file] - text file that contains graph image" );
+	        System.exit(1);
+	    }
+
+	
+	
+
+
+	
+	private static void printTestGraphData(GraphData g){
+		System.out.println("Graph Name: " + g.graphName);
+		System.out.println("Number of nodes: " + g.numNodes);
+		System.out.println("Number of eges: " + g.numEdges);
+		for(int i =0; i < g.numNodes; i++){
+			System.out.println();
+			for(int j =0; j < g.numNodes; j++){
+				System.out.print("\t" + g.adjMatrix[i][j]);
+			}
+		}
+	}
+	
+
+	private static GraphData getGraphData (String filename){
+		GraphData myGraph = null; 
+		BufferedReader b = null; 
+		try{
+			b = new BufferedReader (new FileReader(filename));
+			String graphName = b.readLine(); 
+			int numNodes = Integer.parseInt(b.readLine());
+			int numEdges = Integer.parseInt(b.readLine());
+			myGraph = new GraphData(graphName, numNodes, numEdges);
+			String read;
+			String node [];
+
+			while((read = b.readLine())!= null && read != "" && read != " "){
+				node = read.split(" ");
+				myGraph.addEdge(Integer.parseInt(node[0]), Integer.parseInt(node[1]));
+			}
+		}catch (IOException e){
+			e.printStackTrace();
+		}finally{
+			try {
+                if (b!=null) b.close();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+			return myGraph;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

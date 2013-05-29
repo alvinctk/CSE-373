@@ -1,0 +1,12 @@
+{
+  "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\rt.jar",
+    "status": "RESOLVED"
+  },
+  "C:\\Users\\alvin2\\Documents\\GitHub\\CSE-373\\CSE 373 Hw 5 - Graph\\CSE 373 Hw 5 - Graph\\CSE 373 Graph\\src": {
+    "location": "C:\\Users\\alvin2\\Documents\\GitHub\\CSE-373\\CSE 373 Hw 5 - Graph\\CSE 373 Hw 5 - Graph\\CSE 373 Graph\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\alvin2\\Documents\\GitHub\\CSE-373\\CSE 373 Hw 5 - Graph\\CSE 373 Hw 5 - Graph\\CSE 373 Graph\\src\u0027. Skipped."
+  }
+}

@@ -680,3 +680,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2013-05-28 16:11:12.699
 !MESSAGE Failed to open search index.
+
+!ENTRY org.eclipse.ui 4 4 2013-05-28 20:20:16.725
+!MESSAGE Conflicting handlers for org.eclipse.debug.ui.commands.eof: {org.eclipse.debug.internal.ui.views.console.ProcessConsolePageParticipant$EOFHandler@493503c4} vs {org.eclipse.debug.internal.ui.views.console.ProcessConsolePageParticipant$EOFHandler@493503c4}
