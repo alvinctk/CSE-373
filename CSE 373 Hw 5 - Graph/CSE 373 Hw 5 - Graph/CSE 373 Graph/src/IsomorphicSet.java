@@ -1,8 +1,8 @@
 public class IsomorphicSet {
-	int mapping [][]; 
-	int curIndexPtr;
-	int size; 
-	static int numSets = 2;
+	private int mapping [][]; 
+	public int curIndexPtr;
+	private int size; 
+	private static int numSets = 2;
 	
 	public IsomorphicSet (int size){
 		this(size, 0, new int [numSets][size]);
@@ -16,7 +16,7 @@ public class IsomorphicSet {
 	public IsomorphicSet (int size, int curIndexPtr, int [][] mapping){
 		this.size = size; 
 		this.mapping = mapping; 
-		curIndexPtr = this.curIndexPtr; 
+		this.curIndexPtr = curIndexPtr; 
 	}
 	
 	public IsomorphicSet (IsomorphicSet toBeCopy){
@@ -31,25 +31,78 @@ public class IsomorphicSet {
 
 	//ISOMORPHISM: {(1,2),(2,3),(3,4)}
 	public void printIsomorphism () {
-		System.out.print("\nISOMORPHISM: {");
-		for (int i = 0; i <= curIndexPtr ; i++){
-			System.out.print("(");
-			System.out.print(mapping[0][i]);
-			System.out.print(","); 
-			System.out.print(mapping[1][i]);
-			System.out.print(")");
-			if (i != curIndexPtr){
+
+			System.out.print("\nISOMORPHISM: {");
+			for (int i = 0; i < curIndexPtr ; i++){
+				System.out.print("(");
+				System.out.print(mapping[0][i]+1);
 				System.out.print(","); 
+				System.out.print(mapping[1][i]+1);
+				System.out.print(")");
+				if (i != curIndexPtr-1){
+					System.out.print(","); 
+				}
 			}
-		}
-		System.out.print("}");
+			System.out.print("}");
+
+
 	}
 	
-	public void addMapping(int VM, int VE, boolean increment){
-		mapping[0][curIndexPtr] = VM; 
-		mapping[1][curIndexPtr] = VE; 
-		if (increment){
-			curIndexPtr ++; 
+	//ISOMORPHISM: {(1,2),(2,3),(3,4)}
+	public void printTest () {
+
+			System.out.print("\nTest: {");
+			for (int i = 0; i < curIndexPtr ; i++){
+				System.out.print("(");
+				System.out.print(mapping[0][i] +1);
+				System.out.print(","); 
+				System.out.print(mapping[1][i] +1);
+				System.out.print(")");
+				if (i != curIndexPtr){
+					System.out.print(","); 
+				}
+			}
+			System.out.print("}\n");
+
+
+	}
+	
+	
+	public void addMapping(int VM, int VD){
+		if (mapping[0][curIndexPtr] == -5 && mapping[1][curIndexPtr] == -5 ){
+			mapping[0][curIndexPtr] = VM; 
+			mapping[1][curIndexPtr] = VD; 
+			if ((curIndexPtr + 1) <= size){
+				curIndexPtr ++; 
+			}
 		}
+	}
+	// to be called after addMapping 
+	public void removeMapping(){
+		mapping[0][curIndexPtr-1] = -5; 
+		mapping[1][curIndexPtr-1] = -5;
+		curIndexPtr--;
+	}
+	
+	public void addVXMapping(int VX, boolean type, boolean increment){
+		if (type){
+			mapping[0][curIndexPtr] = VX;
+		}else{
+			mapping[1][curIndexPtr] = VX; 
+		}
+		
+		if (increment){
+			curIndexPtr ++;
+		}
+	}
+	
+	public int getMapValue(int type, int index){
+		return mapping[type][index];
+	}
+	
+	public boolean isComplete(){
+		return ((curIndexPtr+1) == size && 
+				mapping[0][curIndexPtr] != -5 &&
+				mapping[1][curIndexPtr] != -5)? true : false; 
 	}
 }
