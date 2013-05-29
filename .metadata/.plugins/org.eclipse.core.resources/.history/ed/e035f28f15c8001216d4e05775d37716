@@ -30,6 +30,7 @@ public class VertexSet {
 
 		
 	}
+	
 	public int getVertice(int index){
 		
 		return (index < size)? vertices[index]: -5;

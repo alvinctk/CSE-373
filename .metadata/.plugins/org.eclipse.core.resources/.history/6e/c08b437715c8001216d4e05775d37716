@@ -72,7 +72,7 @@ public class Match {
 					//hCopy.printIsomorphism();
 					if (hCopy.isComplete()){//VMCopy.isEmpty() && ){
 						System.out.print("\nprint");
-						//hCopy.printIsomorphism(); 
+						//hCopy.printIsomorphism();
 					}else{
 						//hCopy.printTest();
 						searchIsomorphic(VMCopy, VDCopy, hCopy);

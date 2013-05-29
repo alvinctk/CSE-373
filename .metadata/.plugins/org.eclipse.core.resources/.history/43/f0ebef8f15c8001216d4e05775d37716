@@ -99,6 +99,7 @@ public class IsomorphicSet {
 	public int getMapValue(int type, int index){
 		return mapping[type][index];
 	}
+	
 	public boolean isComplete(){
 		this.printIsomorphism();
 		return ((curIndexPtr) == size && 

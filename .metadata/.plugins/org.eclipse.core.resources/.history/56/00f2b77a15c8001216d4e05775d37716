@@ -5,6 +5,7 @@ public class GraphData {
 	int adjMatrix [][];
 	int vertices[];
 
+
 	public GraphData(String graphName, int numNodes, int numEdges){
 		this.graphName = graphName; 
 		this.numNodes = numNodes; 
