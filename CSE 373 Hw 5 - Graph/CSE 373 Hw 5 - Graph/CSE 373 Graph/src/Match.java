@@ -15,10 +15,7 @@ public class Match {
 			matchSubGraph(args[0], args[1]);
 		}
 
-	
-		
 
-		
 	}
 	
 	private static  void matchSubGraph (String GM_filename, String GD_filename){
@@ -42,8 +39,6 @@ public class Match {
 	}
 	
 	
-	
-	
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD){
 	
 		for (int i = 0; i < VD.size; i++){
@@ -54,29 +49,28 @@ public class Match {
 			VertexSet VMCopy = new VertexSet(VM, 0);
 			VertexSet VDCopy = new VertexSet(VD, i);
 			
-			searchIsomorphic(VMCopy, VDCopy, hCopy);
-			
+			searchIsomorphic(VMCopy, VDCopy, hCopy);	
 		}
 	}
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
 		
-		for (int j = 0; j < VD.size && VM.size >= 1; j++){
+		for (int j = 0; j < VD.size && VM.size != 0; j++){
 				
 				IsomorphicSet hCopy = new IsomorphicSet(h);
 				hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
-				//isMappingOk = isMappingOk(hCopy);
+			
 				if (isMappingOk(hCopy)){
 					//System.out.print("\nok");
 					VertexSet VMCopy = new VertexSet(VM, 0);
 					VertexSet VDCopy = new VertexSet(VD, j);
-					//hCopy.printIsomorphism();
-					if (hCopy.isComplete()){//VMCopy.isEmpty() && ){
-						System.out.print("\nprint");
-						//hCopy.printIsomorphism(); 
+					
+					if (hCopy.isComplete()){//VMCopy.isEmpty(VM) && ){
+						//System.out.print("\nprint");
+						hCopy.printIsomorphism(); 
 					}else{
-						//hCopy.printTest();
+
 						searchIsomorphic(VMCopy, VDCopy, hCopy);
-						hCopy.printIsomorphism();
+						
 					}
 					
 				}
@@ -85,14 +79,14 @@ public class Match {
 	}
 	
 	private static boolean isMappingOk(IsomorphicSet h){
-		for (int i =0; i < h.curIndexPtr; i++){
+		for (int i =0; i < (h.curIndexPtr); i++){
 			int xCurVM = h.getMapValue(0, i);
 			int xCurVD = h.getMapValue(1, i);
-			for (int j = 0; j< h.curIndexPtr; j++){
+			for (int j = 0; j< (h.curIndexPtr); j++){
 				if (i != j){
 					int xTempVM = h.getMapValue(0, j);
 					int xTempVD = h.getMapValue(1, j);
-					if (adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
+					if (adjMatrixGM[xCurVM][xTempVM] != 0 && adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
 						
 						h.removeMapping();
 						return false; 

@@ -17,6 +17,7 @@ public class IsomorphicSet {
 		this.size = size; 
 		this.mapping = mapping; 
 		this.curIndexPtr = curIndexPtr; 
+	
 	}
 	
 	public IsomorphicSet (IsomorphicSet toBeCopy){
@@ -79,11 +80,11 @@ public class IsomorphicSet {
 	}
 	// to be called after addMapping 
 	public void removeMapping(){
-		mapping[0][curIndexPtr-1] = -5; 
-		mapping[1][curIndexPtr-1] = -5;
 		curIndexPtr--;
+		mapping[0][curIndexPtr] = -5; 
+		mapping[1][curIndexPtr] = -5;
+		
 	}
-	
 	public void addVXMapping(int VX, boolean type, boolean increment){
 		if (type){
 			mapping[0][curIndexPtr] = VX;
@@ -100,9 +101,9 @@ public class IsomorphicSet {
 		return mapping[type][index];
 	}
 	public boolean isComplete(){
-		this.printIsomorphism();
-		return ((curIndexPtr) == size && 
-				mapping[0][curIndexPtr-1] != -5 &&
-				mapping[1][curIndexPtr-1] != -5)? true : false; 
+		//this.printIsomorphism();
+		return ((curIndexPtr) == size); //&& 
+				//mapping[0][curIndexPtr-1] != -5 &&
+				//mapping[1][curIndexPtr-1] != -5)? true : false; 
 	}
 }

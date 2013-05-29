@@ -7,32 +7,6 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "e40d113f2ecae484f1a654eb167796609d706748",
-    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\jaccess.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "26f9abbea37ee13af872602996f5d69b668f0fec",
-    "jarFileModificationDate": "2013-04-02T16:00:22-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\localedata.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
     "jarFileFingerprint": "d23c2b5fb8da30209350f4e905a73fab3094787f",
     "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
     "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\zipfs.jar",
@@ -46,74 +20,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "f260fdc7514244e0059af49afe328d452ddf26cd",
-    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\access-bridge-64.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "4b53ea8d9c5e5cb0ca7fea605c2bc3826ee6295b",
-    "jarFileModificationDate": "2013-04-02T16:00:22-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\rt.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
     "jarFileFingerprint": "c4c7923b11e98bc8d1d32bfd2ff6363d212ead80",
     "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
     "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\sunec.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "c4919752d1e48ec1ad34d7e9c8de7f3bb4e306c7",
-    "jarFileModificationDate": "2013-04-02T16:00:18-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\jsse.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "66754a0437bc63ff9536e04386b6d873f5d0a907",
-    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\resources.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "a3d1a9689f1c8e36ab64fb669df92076771c42f2",
-    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
-    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\sunmscapi.jar",
     "javaRuntime": true
   },
   {
@@ -153,6 +62,97 @@
     "jarFileFingerprint": "7963b640909c134149d1d2ace8eabc5a8d8da6a5",
     "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
     "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\dnsns.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "e40d113f2ecae484f1a654eb167796609d706748",
+    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\jaccess.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "26f9abbea37ee13af872602996f5d69b668f0fec",
+    "jarFileModificationDate": "2013-04-02T16:00:22-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\localedata.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "f260fdc7514244e0059af49afe328d452ddf26cd",
+    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\access-bridge-64.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "4b53ea8d9c5e5cb0ca7fea605c2bc3826ee6295b",
+    "jarFileModificationDate": "2013-04-02T16:00:22-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\rt.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "c4919752d1e48ec1ad34d7e9c8de7f3bb4e306c7",
+    "jarFileModificationDate": "2013-04-02T16:00:18-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\jsse.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "66754a0437bc63ff9536e04386b6d873f5d0a907",
+    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\resources.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "a3d1a9689f1c8e36ab64fb669df92076771c42f2",
+    "jarFileModificationDate": "2013-04-02T16:00:10-07:00",
+    "location": "C:\\Users\\alvin2\\Desktop\\Eclipse (64 bit)\\x64\\jdk1.7.0_17\\jre\\lib\\ext\\sunmscapi.jar",
     "javaRuntime": true
   },
   {
