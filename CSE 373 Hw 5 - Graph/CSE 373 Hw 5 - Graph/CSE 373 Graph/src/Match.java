@@ -51,7 +51,7 @@ public class Match {
 			
 			searchIsomorphic(VMCopy, VDCopy, hCopy);	
 		}
-	}
+	}  
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
 		
 		for (int j = 0; j < VD.size && VM.size != 0; j++){
@@ -112,11 +112,7 @@ public class Match {
 	        System.exit(1);
 	    }
 
-	
-	
 
-
-	
 	private static void printTestGraphData(GraphData g){
 		System.out.println("Graph Name: " + g.graphName);
 		System.out.println("Number of nodes: " + g.numNodes);
@@ -129,7 +125,6 @@ public class Match {
 		}
 	}
 	
-
 	private static GraphData getGraphData (String filename){
 		GraphData myGraph = null; 
 		BufferedReader b = null; 

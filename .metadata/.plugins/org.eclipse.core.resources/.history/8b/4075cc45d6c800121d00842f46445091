@@ -15,10 +15,7 @@ public class Match {
 			matchSubGraph(args[0], args[1]);
 		}
 
-	
-		
 
-		
 	}
 	
 	private static  void matchSubGraph (String GM_filename, String GD_filename){
@@ -38,10 +35,8 @@ public class Match {
 		printTestGraphData(GD);
 		
 		searchIsomorphic(VM, VD);
-		
+		System.out.println("nothing");
 	}
-	
-	
 	
 	
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD){
@@ -54,49 +49,52 @@ public class Match {
 			VertexSet VMCopy = new VertexSet(VM, 0);
 			VertexSet VDCopy = new VertexSet(VD, i);
 			
-			searchIsomorphic(VMCopy, VDCopy, hCopy);
-			
+			searchIsomorphic(VMCopy, VDCopy, hCopy);	
 		}
-	}
+	} 
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
-		for (int i = 0; i < VM.size; i++){
-			for (int j = 0; j < VD.size; j++){
+		
+		for (int j = 0; j < VD.size && VM.size != 0; j++){
 				
 				IsomorphicSet hCopy = new IsomorphicSet(h);
-				hCopy.addMapping(VM.getVertice(i), VD.getVertice(j));
-				
+				hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
+			
 				if (isMappingOk(hCopy)){
 					//System.out.print("\nok");
-					VertexSet VMCopy = new VertexSet(VM, i);
+					VertexSet VMCopy = new VertexSet(VM, 0);
 					VertexSet VDCopy = new VertexSet(VD, j);
-					if (VMCopy.isEmpty()){
+					
+					if (hCopy.isComplete()){//VMCopy.isEmpty(VM) && ){
 						//System.out.print("\nprint");
-						hCopy.printIsomorphism();
+						hCopy.printIsomorphism(); 
 					}else{
-						//hCopy.printTest();
+
 						searchIsomorphic(VMCopy, VDCopy, hCopy);
+						
 					}
 					
 				}
-			}
 		}
+		
 	}
 	
 	private static boolean isMappingOk(IsomorphicSet h){
-		for (int i =0; i < h.curIndexPtr; i++){
+		for (int i =0; i < (h.curIndexPtr); i++){
 			int xCurVM = h.getMapValue(0, i);
 			int xCurVD = h.getMapValue(1, i);
-			for (int j = 0; j< h.curIndexPtr; j++){
+			for (int j = 0; j< (h.curIndexPtr); j++){
 				if (i != j){
 					int xTempVM = h.getMapValue(0, j);
 					int xTempVD = h.getMapValue(1, j);
-					if (adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
+					if (adjMatrixGM[xCurVM][xTempVM] != 0 && adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
+						
 						h.removeMapping();
 						return false; 
 					}
 				}
 			}
 		}
+		
 		return true;
 	}
 
@@ -114,11 +112,7 @@ public class Match {
 	        System.exit(1);
 	    }
 
-	
-	
 
-
-	
 	private static void printTestGraphData(GraphData g){
 		System.out.println("Graph Name: " + g.graphName);
 		System.out.println("Number of nodes: " + g.numNodes);
@@ -131,7 +125,6 @@ public class Match {
 		}
 	}
 	
-
 	private static GraphData getGraphData (String filename){
 		GraphData myGraph = null; 
 		BufferedReader b = null; 

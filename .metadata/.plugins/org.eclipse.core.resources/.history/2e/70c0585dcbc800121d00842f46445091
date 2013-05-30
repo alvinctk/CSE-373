@@ -1,0 +1,84 @@
+/** Description of VertexSet: By definition of vertex in this set, 
+ *  the vertex is a node that has edges of an undirected graph. 
+ *  <br> This vertex set contains all vertices of a particular undirected subgraph
+ *  or graph. Set defined here is the mathematical set.   
+ * 
+ *
+ * @author Alvin Chia
+ * @version 3.0 SubGraph Isomorphism - Wednesday, May 29, 2013. 
+ * 
+ */
+
+public class VertexSet {
+	private int vertices [];
+	public int size;
+	
+    /* Constructor to balance AVL Tree with single rotation
+     * @param node k2 to be re-balance (Object)
+     * @behavior Rotate binary tree node with left child
+     *           Update heights.
+     * @return the new root of the subtree
+     */
+	/*@author [author name] - identifies author(s) of a class or interface.
+	@version [version] - version info of a class or interface.
+	@param [argument name] [argument description] - describes an argument of method or constructor.
+	@return [description of return] - describes data returned by method (unnecessary for constructors and void methods).
+	@exception [exception thrown] [exception description] - describes exception thrown by method.
+	@throws [exception thrown] [exception description] - same as @exception.
+	*/ 
+	
+	/**
+	 * Constructor: Specifies the size of a VertexSet to be created.  
+	 * @param size - Integer. The size of VertexSet.
+	 */
+	public VertexSet(int size){
+		this (size, new int[size]);
+		for(int i = 0; i < size; i++){
+		   vertices[i] = i;
+		}
+	}
+	
+	/**
+	 * Constructor: Create a VertexSet Object with all   
+	 * @param size - Integer. The size of VertexSet.
+	 * @param vertices - Integer array. vertices contains all the vertex 
+	 *                   of an undirected graph
+	 * 
+	 */
+	private VertexSet(int size, int [] vertices){
+		this.size = size; 
+		this.vertices = vertices;
+	}
+    /* Internal method to balance AVL Tree with single rotation
+     * @param node k2 to be re-balance (Object)
+     * @behavior Rotate binary tree node with left child
+     *           Update heights.
+     * @return the new root of the subtree
+     */
+
+	public VertexSet(VertexSet toBeCopy, int indexToBeRemove){
+		this(toBeCopy.size-1, new int[toBeCopy.size-1]);
+		if (this.size != 0){
+			int i = 0; 
+			int copyMe [] = toBeCopy.vertices;
+			for (i =0; i < indexToBeRemove; i++){
+				vertices[i] = copyMe[i];
+			}
+			for (int j = i; j < this.size; j++){
+				vertices[j] = copyMe[j + 1];
+			}
+		}
+	}
+	
+	public int getVertice(int index){
+		return (index < size)? vertices[index]: -5;
+	}
+	
+	
+	public boolean isEmpty(VertexSet VM){
+		return VM.size == 1; 
+	}
+
+	
+	
+}

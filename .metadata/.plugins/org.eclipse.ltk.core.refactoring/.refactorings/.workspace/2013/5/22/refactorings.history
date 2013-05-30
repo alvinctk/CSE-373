@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;CSE 373 SubGraph Isomorphism&apos;" deleteContents="false" description="Delete resource &apos;CSE 373 SubGraph Isomorphism&apos;" element1="/CSE 373 SubGraph Isomorphism" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1369883214004"/>
+</session>
