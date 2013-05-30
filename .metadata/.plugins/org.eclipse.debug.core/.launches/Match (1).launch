@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Match"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="small_house.graph big_house.graph"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="c4.graph small_house.graph"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CSE 373 Graph"/>
 </launchConfiguration>

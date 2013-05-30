@@ -144,11 +144,10 @@ public class Match {
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD){
 	
 		for (int i = 0; i < VD.size; i++){
-			
+				
 			IsomorphicSet hCopy = new IsomorphicSet(VM.size);
 			hCopy.addMapping(VM.getVertice(0), VD.getVertice(i));
-			
-			// first (v,m) to start search
+				
 			VertexSet VMCopy = new VertexSet(VM, 0);
 			VertexSet VDCopy = new VertexSet(VD, i);
 			

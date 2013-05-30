@@ -122,7 +122,7 @@ public class IsomorphicSet {
 		return mapping[type][index];
 	}
 	
-
+	
 	/**
 	 * Description of isComplete: Determine whether the IsomorphicSet has a 
 	 * complete set of mapping of vertices from Graph Model GM and Graph Data.<br>

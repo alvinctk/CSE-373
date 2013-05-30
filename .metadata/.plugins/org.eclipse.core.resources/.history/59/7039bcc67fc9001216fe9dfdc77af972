@@ -36,7 +36,7 @@ public class VertexSet {
 		this.size = size; 
 		this.vertices = vertices;
 	}
-	
+
 	/**
 	 * Constructor: Creates a cloned copy of the original VertexSet 
 	 *              with 1 vertex removed<br>   
