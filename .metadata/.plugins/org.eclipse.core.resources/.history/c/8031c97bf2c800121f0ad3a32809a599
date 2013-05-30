@@ -1,0 +1,53 @@
+    /* Constructor to balance AVL Tree with single rotation
+     * @param node k2 to be re-balance (Object)
+     * @behavior Rotate binary tree node with left child
+     *           Update heights.
+     * @return the new root of the subtree
+     */
+	/*@author [author name] - identifies author(s) of a class or interface.
+	@version [version] - version info of a class or interface.
+	@param [argument name] [argument description] - describes an argument of method or constructor.
+	@return [description of return] - describes data returned by method (unnecessary for constructors and void methods).
+	@exception [exception thrown] [exception description] - describes exception thrown by method.
+	@throws [exception thrown] [exception description] - same as @exception.
+	*/ 
+	
+	
+	
+	private static void printTestGraphData(GraphData g){
+		System.out.println("Graph Name: " + g.graphName);
+		System.out.println("Number of nodes: " + g.numNodes);
+		System.out.println("Number of eges: " + g.numEdges);
+		for(int i =0; i < g.numNodes; i++){
+			System.out.println();
+			for(int j =0; j < g.numNodes; j++){
+				System.out.print("\t" + g.adjMatrix[i][j]);
+			}
+		}
+	}
+	
+	
+		//ISOMORPHISM: {(1,2),(2,3),(3,4)}
+	public void printTest () {
+
+			System.out.print("\nTest: {");
+			for (int i = 0; i < curIndexPtr ; i++){
+				
+				System.out.print("(");
+				System.out.print(mapping[0][i] +1);
+				System.out.print(","); 
+				System.out.print(mapping[1][i] +1);
+				System.out.print(")");
+				
+				if (i != curIndexPtr){ // at the end
+					System.out.print(","); 
+				}
+			}
+			System.out.print("}\n");
+	}
+	
+			printTestGraphData(GM);
+		System.out.println();
+		printTestGraphData(GD);
+		
+			System.out.println("nothing");

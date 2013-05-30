@@ -1,0 +1,79 @@
+/** Description of VertexSet: By definition of vertex in this set, 
+ *  the vertex is a node that has edges of an undirected graph. 
+ *  This vertex set contains all vertices of a particular 
+ *  undirected subgraph or graph. Set defined here is the mathematical set.   
+ *
+ * CSE 373 Homework 5: SubGraph Isomorphism 
+ * TA: Gene Kim 
+ * Professor: Linda Shapiro
+ * 
+ * @author Alvin Chia
+ * @version 3.0 SubGraph Isomorphism - Wednesday, May 29, 2013. 
+ * 
+ */
+public class VertexSet {
+	private int vertices [];
+	public int size;
+
+	/**
+	 * Constructor: Specifies the size of a VertexSet to be created.  
+	 * @param size - Integer. The size of VertexSet.
+	 */
+	public VertexSet(int size){
+		this (size, new int[size]);
+		for(int i = 0; i < size; i++){
+		   vertices[i] = i;
+		}
+	}
+	
+	/**
+	 * Internal Constructor: Create a VertexSet Object   
+	 * @param size (Integer) - the size of VertexSet.
+	 * @param vertices (Integer array) - vertices contains all the vertex 
+	 *                   of an undirected graph
+	 */
+	private VertexSet(int size, int [] vertices){
+		this.size = size; 
+		this.vertices = vertices;
+	}
+
+	/**
+	 * Constructor: Creates a cloned copy of the original VertexSet 
+	 *              with 1 vertex removed<br>   
+	 * Note: The cloned object's size is 1 less than the original. 
+	 *       Vertex is not of use is removed from set.              
+	 *              
+	 * @param toBeCopy (VertexSet object) - The original VertexSet to be copy
+	 * @param vertices (Integer array) - vertices contains all the vertex 
+	 *                                   of an undirected graph
+	 */
+	public VertexSet(VertexSet toBeCopy, int indexToBeRemove){
+		this(toBeCopy.size-1, new int[toBeCopy.size-1]);
+		if (this.size != 0){
+			int i = 0; 
+			int copyMe [] = toBeCopy.vertices;
+			for (i =0; i < indexToBeRemove; i++){
+				vertices[i] = copyMe[i];
+			}
+			for (int j = i; j < this.size; j++){
+				vertices[j] = copyMe[j + 1];
+			}
+		}
+	}
+	
+	/**
+	 * getVertice: retrieve the value of Vertex 
+	 * @param index (Integer) - location where the Vertex of interest is stored
+	 * @return Return the value of the Vertex; 
+	 *        <br> Value to be used as index to access the adjacency matrix information
+	 *        <br> Value needs to be offset by 1 to be print the correct value.   
+	 */
+	public int getVertice(int index){
+		return (index < size)? vertices[index]: -5;
+	}
+
+	
+	public boolean isEmpty(VertexSet VM){
+		return VM.size == 1; 
+	}
+}

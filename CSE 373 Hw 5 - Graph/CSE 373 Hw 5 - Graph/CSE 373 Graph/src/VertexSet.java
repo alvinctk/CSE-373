@@ -3,6 +3,10 @@
  *  This vertex set contains all vertices of a particular 
  *  undirected subgraph or graph. Set defined here is the mathematical set.   
  *
+ * CSE 373 Homework 5: SubGraph Isomorphism 
+ * TA: Gene Kim 
+ * Professor: Linda Shapiro
+ * 
  * @author Alvin Chia
  * @version 3.0 SubGraph Isomorphism - Wednesday, May 29, 2013. 
  * 
@@ -35,7 +39,10 @@ public class VertexSet {
 
 	/**
 	 * Constructor: Creates a cloned copy of the original VertexSet 
-	 *              with 1 vertex removed   
+	 *              with 1 vertex removed<br>   
+	 * Note: The cloned object's size is 1 less than the original. 
+	 *       Vertex is not of use is removed from set.              
+	 *              
 	 * @param toBeCopy (VertexSet object) - The original VertexSet to be copy
 	 * @param vertices (Integer array) - vertices contains all the vertex 
 	 *                                   of an undirected graph
@@ -64,12 +71,4 @@ public class VertexSet {
 	public int getVertice(int index){
 		return (index < size)? vertices[index]: -5;
 	}
-
-	
-	public boolean isEmpty(VertexSet VM){
-		return VM.size == 1; 
-	}
-
-	
-	
 }
