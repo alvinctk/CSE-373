@@ -13,26 +13,6 @@
 	*/ 
 	
 	
-		private static boolean isMappingOk(IsomorphicSet h){
-		for (int i =0; i < (h.curIndexPtr); i++){
-			int xCurVM = h.getMapValue(0, i);
-			int xCurVD = h.getMapValue(1, i);
-			for (int j = 0; j< (h.curIndexPtr); j++){
-				if (i != j){
-					int xTempVM = h.getMapValue(0, j);
-					int xTempVD = h.getMapValue(1, j);
-					if (adjMatrixGM[xCurVM][xTempVM] != 0 && 
-						adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
-						
-						h.removeMapping();
-						return false; 
-					}
-				}
-			}
-		}
-		return true;
-	}
-	
 	
 	private static void printTestGraphData(GraphData g){
 		System.out.println("Graph Name: " + g.graphName);

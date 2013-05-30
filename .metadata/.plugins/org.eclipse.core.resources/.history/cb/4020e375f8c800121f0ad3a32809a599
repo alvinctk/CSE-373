@@ -155,21 +155,21 @@ public class IsomorphicSet {
 	 */
 	public void printIsomorphism () {
 
-		System.out.print("ISOMORPHISM: {");
-
-		for (int i = 0; i < curIndexPtr; i++) {
-
-			System.out.print("(");
-			System.out.print(mapping[0][i] + 1); // VM
-			System.out.print(",");
-			System.out.print(mapping[1][i] + 1); // VD
-			System.out.print(")");
-
-			if (i != curIndexPtr - 1) { // don't print last
-				System.out.print(",");
+			System.out.print("ISOMORPHISM: {");
+			
+			for (int i = 0; i < curIndexPtr ; i++){
+				
+				System.out.print("(");
+				System.out.print(mapping[0][i]+1); // VM 
+				System.out.print(","); 
+				System.out.print(mapping[1][i]+1); // VD
+				System.out.print(")");
+				
+				if (i != curIndexPtr-1){ // don't print last 
+					System.out.print(","); 
+				}
+				
 			}
-
-		}
-		System.out.print("}\n");
+			System.out.print("}");
 	}
 }

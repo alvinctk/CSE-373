@@ -176,26 +176,23 @@ public class Match {
 	 */
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
 		
-		for (int j = 0; j < VD.size && VM.size != 0; j++) {
-
-			// Create a copy of Isomorphic Set	
-			IsomorphicSet hCopy = new IsomorphicSet(h);
-			hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
-
-			if (isMappingOk(hCopy)) {
-
-				// create a copy Vertex Set without (vm, vd)
-				// that has been added to Isomoprhic Set
-				VertexSet VMCopy = new VertexSet(VM, 0);
-				VertexSet VDCopy = new VertexSet(VD, j);
-
-				if (hCopy.isComplete()) { // base case
-					hCopy.printIsomorphism();
-
-				} else { // recursive case
-					searchIsomorphic(VMCopy, VDCopy, hCopy);
+		for (int j = 0; j < VD.size && VM.size != 0; j++){
+				
+				IsomorphicSet hCopy = new IsomorphicSet(h);
+				hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
+			
+				if (isMappingOk(hCopy)){
+					//System.out.print("\nok");
+					VertexSet VMCopy = new VertexSet(VM, 0);
+					VertexSet VDCopy = new VertexSet(VD, j);
+					
+					if (hCopy.isComplete()){//VMCopy.isEmpty(VM) && ){
+						//System.out.print("\nprint");
+						hCopy.printIsomorphism(); 
+					}else{
+						searchIsomorphic(VMCopy, VDCopy, hCopy);
+					}	
 				}
-			}
 		}
 	}
 	
@@ -210,24 +207,24 @@ public class Match {
 	 * @return true if there exists such a undirected subgraph isomorphic mapping between
 	 *         subgraph GD and subgraph GM; Otherwise, false. 
 	 */
+	
 	private static boolean isMappingOk(IsomorphicSet h){
-		int curPosition = h.curIndexPtr-1;
-		int xCurVM = h.getMapValue(0, curPosition);
-		int xCurVD = h.getMapValue(1, curPosition);
-
-		for (int j = 0; j < (h.curIndexPtr); j++) {
-			if (curPosition!= j) {
-				int xTempVM = h.getMapValue(0, j);
-				int xTempVD = h.getMapValue(1, j);
-				if (adjMatrixGM[xCurVM][xTempVM] != 0 &&
-					adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]) {
-
-					h.removeMapping();
-					return false;
+		for (int i =0; i < (h.curIndexPtr); i++){
+			int xCurVM = h.getMapValue(0, i);
+			int xCurVD = h.getMapValue(1, i);
+			for (int j = 0; j< (h.curIndexPtr); j++){
+				if (i != j){
+					int xTempVM = h.getMapValue(0, j);
+					int xTempVD = h.getMapValue(1, j);
+					if (adjMatrixGM[xCurVM][xTempVM] != 0 && 
+						adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]){
+						
+						h.removeMapping();
+						return false; 
+					}
 				}
 			}
 		}
-		
 		return true;
 	}
 

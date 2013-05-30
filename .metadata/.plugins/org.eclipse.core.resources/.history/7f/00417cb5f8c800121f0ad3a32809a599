@@ -155,7 +155,7 @@ public class IsomorphicSet {
 	 */
 	public void printIsomorphism () {
 
-		System.out.print("ISOMORPHISM: {");
+		System.out.print("\nISOMORPHISM: {");
 
 		for (int i = 0; i < curIndexPtr; i++) {
 
@@ -170,6 +170,6 @@ public class IsomorphicSet {
 			}
 
 		}
-		System.out.print("}\n");
+		System.out.print("}");
 	}
 }

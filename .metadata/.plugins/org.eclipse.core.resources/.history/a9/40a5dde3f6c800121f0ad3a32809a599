@@ -176,26 +176,23 @@ public class Match {
 	 */
 	private static void searchIsomorphic(VertexSet VM, VertexSet VD, IsomorphicSet h){
 		
-		for (int j = 0; j < VD.size && VM.size != 0; j++) {
-
-			// Create a copy of Isomorphic Set	
-			IsomorphicSet hCopy = new IsomorphicSet(h);
-			hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
-
-			if (isMappingOk(hCopy)) {
-
-				// create a copy Vertex Set without (vm, vd)
-				// that has been added to Isomoprhic Set
-				VertexSet VMCopy = new VertexSet(VM, 0);
-				VertexSet VDCopy = new VertexSet(VD, j);
-
-				if (hCopy.isComplete()) { // base case
-					hCopy.printIsomorphism();
-
-				} else { // recursive case
-					searchIsomorphic(VMCopy, VDCopy, hCopy);
+		for (int j = 0; j < VD.size && VM.size != 0; j++){
+				
+				IsomorphicSet hCopy = new IsomorphicSet(h);
+				hCopy.addMapping(VM.getVertice(0), VD.getVertice(j));
+			
+				if (isMappingOk(hCopy)){
+					//System.out.print("\nok");
+					VertexSet VMCopy = new VertexSet(VM, 0);
+					VertexSet VDCopy = new VertexSet(VD, j);
+					
+					if (hCopy.isComplete()){//VMCopy.isEmpty(VM) && ){
+						//System.out.print("\nprint");
+						hCopy.printIsomorphism(); 
+					}else{
+						searchIsomorphic(VMCopy, VDCopy, hCopy);
+					}	
 				}
-			}
 		}
 	}
 	
@@ -230,7 +227,6 @@ public class Match {
 		
 		return true;
 	}
-
 }
 
 /**
