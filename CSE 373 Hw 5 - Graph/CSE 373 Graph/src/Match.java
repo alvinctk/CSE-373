@@ -215,10 +215,13 @@ public class Match {
 		int xCurVM = h.getMapValue(0, curPosition);
 		int xCurVD = h.getMapValue(1, curPosition);
 
+		// compare all other vertices in the IsomorphicSet	
 		for (int j = 0; j < (h.curIndexPtr); j++) {
 			if (curPosition!= j) {
 				int xTempVM = h.getMapValue(0, j);
 				int xTempVD = h.getMapValue(1, j);
+				
+				// compare if only an edge exist in GM 
 				if (adjMatrixGM[xCurVM][xTempVM] != 0 &&
 					adjMatrixGM[xCurVM][xTempVM] != adjMatrixGD[xCurVD][xTempVD]) {
 

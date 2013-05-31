@@ -69,6 +69,7 @@ public class VertexSet {
 	 *        <br> Value needs to be offset by 1 to be print the correct value.   
 	 */
 	public int getVertice(int index){
+		// prevents array out bounds 
 		return (index < size)? vertices[index]: -5;
 	}
 }
